@@ -1,0 +1,8 @@
+# Every doc change needs a frontend reviewer.
+# Replace with real GitHub usernames / team slug.
+
+*                       @your-org/frontend
+
+# Area owners — reviewers get auto-requested for their area.
+# /docs/features/billing-*.md   @username
+# /docs/guidelines/             @username

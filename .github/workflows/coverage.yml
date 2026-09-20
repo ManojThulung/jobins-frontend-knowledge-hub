@@ -1,0 +1,21 @@
+name: Coverage snapshot
+
+on:
+  schedule:
+    - cron: '0 0 * * 1'   # Mondays — for the quarter-end report
+  workflow_dispatch:
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - name: Docs and contributors
+        run: |
+          echo "Feature docs:  $(find docs/features -name '*.md' ! -name 'README.md' ! -name '_*' | wc -l)"
+          echo "Guidelines:    $(find docs/guidelines -name '*.md' ! -name 'README.md' ! -name '_*' | wc -l)"
+          echo "Contributors:  $(git log --format='%an' -- docs/ | sort -u | wc -l)"
+          echo ""
+          echo "Commits per author:"
+          git log --format='%an' -- docs/ | sort | uniq -c | sort -rn

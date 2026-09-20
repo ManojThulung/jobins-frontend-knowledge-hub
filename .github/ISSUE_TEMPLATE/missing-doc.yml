@@ -1,0 +1,28 @@
+name: Missing or unclear doc
+description: Something is not documented, or the doc did not answer your question.
+title: "[docs] "
+labels: ["missing-doc"]
+body:
+  - type: input
+    id: topic
+    attributes:
+      label: What were you trying to find out?
+      placeholder: How to test the DX billing flow as an Enterprise client
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options: [billing, jobs, aica, selection, platform, shared, not sure]
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: What did you do instead?
+      description: Asked in chat, read the code, asked a person? Helps us see the real cost.
+  - type: input
+    id: jira
+    attributes:
+      label: Related Jira ticket (optional)

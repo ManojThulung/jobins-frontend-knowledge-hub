@@ -1,0 +1,47 @@
+name: Doc health
+
+on:
+  pull_request:
+    paths: ['docs/**', 'scripts/**']
+  push:
+    branches: [main]
+  schedule:
+    # 09:00 JST on the 1st of each month — the freshness sweep
+    - cron: '0 0 1 * *'
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Validate frontmatter and report staleness
+        run: node scripts/check-docs.mjs | tee report.txt
+
+      - name: Open the monthly freshness sweep issue
+        if: github.event_name == 'schedule'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const report = fs.readFileSync('report.txt', 'utf8');
+            const month = new Date().toLocaleString('en', { month: 'long', year: 'numeric' });
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `Freshness sweep — ${month}`,
+              labels: ['freshness-sweep'],
+              body: [
+                '20 minutes in the team meeting. For each stale doc:',
+                'update it, reassign it, or delete it. Deleting a doc nobody',
+                'needs is a good outcome.',
+                '',
+                '```',
+                report.trim(),
+                '```',
+              ].join('\n'),
+            });
