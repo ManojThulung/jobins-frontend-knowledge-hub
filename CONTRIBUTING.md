@@ -8,7 +8,7 @@ longer, you are writing too much — cut it down.
 > A feature is not done until its feature doc exists.
 
 This is part of our Definition of Done in Jira. The doc link goes in the Jira
-ticket and in the Bitbucket PR description.
+ticket.
 
 ## Adding a feature doc
 
@@ -48,21 +48,10 @@ jira: JBV1-48615        # optional
 
 ## Keeping docs alive
 
-- When you change a feature, update its doc in the same sprint. The Bitbucket PR
-  description has a line for the doc link — fill it in.
-- **Doc duty rotates weekly** across the frontend team. The person on duty
+- When you change a feature, update its doc in the same sprint, and add the doc
+  link to the Jira ticket.
+- **Doc duty rotates** across the frontend team. The person on duty
   triages open doc issues and clears the staleness report.
 - **Monthly freshness sweep**: 20 minutes in the team meeting. Run the health
   check, then for each stale doc — update it, reassign it, or delete it.
   Deleting a doc nobody needs is a good outcome, not a failure.
-
-## Bitbucket PR description
-
-Add this to the Bitbucket repo's default PR description so the trigger fires
-where the code actually changes:
-
-```
-## Docs
-- [ ] Feature doc added/updated: <link to frontend-knowledge-hub>
-- [ ] Not needed (no user-facing or architectural change)
-```

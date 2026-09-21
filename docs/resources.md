@@ -12,14 +12,14 @@ here instead.
 
 ## Internal
 
-| What | Link | Notes |
-| --- | --- | --- |
-| Jira | | |
-| Bitbucket (frontend) | | |
-| Figma | | |
-| Design system | | |
-| Staging / test environments | | |
-| Team password manager | | Test accounts live here — **not in this repo** |
+| What                        | Link | Notes                                                              |
+| --------------------------- | ---- | ------------------------------------------------------------------ |
+| Jira                        |      | Link to your Jira board, where tickets live                        |
+| Bitbucket (frontend)        |      | Link to the frontend code repo/branch                              |
+| Figma                       |      | Link to the main Figma project where designs are                   |
+| Design system               |      | Link to your shared UI components or style guide, if you have one  |
+| Staging / test environments |      | URLs of the test servers where features are checked before release |
+| Team password manager       |      | Where test account logins are stored safely                        |
 
 ## Learning and reference
 

@@ -10,14 +10,14 @@ and how we write code.
 
 ## Start here
 
-| I want to... | Go to |
-| --- | --- |
-| Understand a feature, or run/test it | [Feature docs](docs/features/) |
-| Know how we write and review code | [Guidelines](docs/guidelines/) |
-| See what changed recently | [Updates](docs/updates/) |
-| Find a link, tool, or reference | [Resources](docs/resources.md) |
-| Ask where something is | [Discussions](../../discussions) |
-| Report a missing or wrong doc | [Open an issue](../../issues/new/choose) |
+| I want to...                         | Go to                                    |
+| ------------------------------------ | ---------------------------------------- |
+| Understand a feature, or run/test it | [Feature docs](docs/features/)           |
+| Know how we write and review code    | [Guidelines](docs/guidelines/)           |
+| See what changed recently            | [Updates](docs/updates/)                 |
+| Find a link, tool, or reference      | [Resources](docs/resources.md)           |
+| Ask where something is               | [Discussions](../../discussions)         |
+| Report a missing or wrong doc        | [Open an issue](../../issues/new/choose) |
 
 ## What belongs here
 
